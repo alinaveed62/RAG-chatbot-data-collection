@@ -4,10 +4,10 @@ from typing import Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
 
-from ..models.document import Document
-from ..utils.logging_config import get_logger
-from ..utils.exceptions import ContentExtractionError
-from .rate_limiter import RateLimiter
+from models.document import Document
+from utils.logging_config import get_logger
+from utils.exceptions import ContentExtractionError
+from scraper.rate_limiter import RateLimiter
 
 logger = get_logger()
 

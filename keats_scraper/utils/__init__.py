@@ -1,7 +1,7 @@
 """Utility functions and configurations."""
 
-from .logging_config import setup_logging
-from .exceptions import (
+from utils.logging_config import setup_logging
+from utils.exceptions import (
     ScraperException,
     AuthenticationError,
     SessionExpiredError,

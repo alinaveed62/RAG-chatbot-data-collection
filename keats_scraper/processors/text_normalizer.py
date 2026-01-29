@@ -4,7 +4,7 @@ import re
 import unicodedata
 from typing import Optional
 
-from ..utils.logging_config import get_logger
+from utils.logging_config import get_logger
 
 logger = get_logger()
 
@@ -66,15 +66,15 @@ class TextNormalizer:
         Returns:
             Fixed text
         """
-        # Fix mojibake for common characters
+        # Fix mojibake for common characters (UTF-8 decoded as Latin-1)
         replacements = [
-            ("â€™", "'"),
-            ("â€œ", '"'),
-            ("â€", '"'),
-            ("â€"", "-"),
-            ("â€"", "-"),
-            ("â€¦", "..."),
-            ("Â ", " "),
+            ("\xe2\x80\x99", "'"),   # Right single quote
+            ("\xe2\x80\x9c", '"'),   # Left double quote
+            ("\xe2\x80\x9d", '"'),   # Right double quote
+            ("\xe2\x80\x93", "-"),   # En dash
+            ("\xe2\x80\x94", "-"),   # Em dash
+            ("\xe2\x80\xa6", "..."), # Ellipsis
+            ("\xc2\xa0", " "),       # Non-breaking space
         ]
 
         for wrong, right in replacements:
@@ -121,13 +121,12 @@ class TextNormalizer:
             Cleaned text
         """
         # Keep printable characters, newlines, and tabs
+        # Note: Spaces have category "Zs" (not "Cc"), so they pass the Cc check
         cleaned = []
         for char in text:
             if char in "\n\t":
                 cleaned.append(char)
             elif unicodedata.category(char) != "Cc":
-                cleaned.append(char)
-            elif char == " ":
                 cleaned.append(char)
         return "".join(cleaned)
 

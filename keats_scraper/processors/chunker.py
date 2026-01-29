@@ -3,10 +3,10 @@
 import re
 from typing import List, Optional, Tuple
 
-from ..models.document import Document
-from ..models.chunk import Chunk
-from ..config import ChunkConfig
-from ..utils.logging_config import get_logger
+from models.document import Document
+from models.chunk import Chunk
+from config import ChunkConfig
+from utils.logging_config import get_logger
 
 logger = get_logger()
 
@@ -103,12 +103,10 @@ class Chunker:
                     current_length = 0
 
                 # Split long paragraph by sentences
+                # Note: para is already stripped, so sentence split won't produce empty strings
                 sentences = re.split(r"(?<=[.!?])\s+", para)
                 for sentence in sentences:
                     sentence = sentence.strip()
-                    if not sentence:
-                        continue
-
                     sent_tokens = self._count_tokens(sentence)
 
                     if current_length + sent_tokens > self.config.chunk_size:

@@ -5,9 +5,9 @@ from pathlib import Path
 from typing import List, Iterator, Optional
 from datetime import datetime
 
-from ..models.document import Document
-from ..models.chunk import Chunk
-from ..utils.logging_config import get_logger
+from models.document import Document
+from models.chunk import Chunk
+from utils.logging_config import get_logger
 
 logger = get_logger()
 

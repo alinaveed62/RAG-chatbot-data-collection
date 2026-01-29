@@ -5,11 +5,11 @@ from pathlib import Path
 from typing import Optional
 import requests
 
-from ..models.document import Document
-from ..config import ScraperConfig
-from ..utils.logging_config import get_logger
-from ..utils.exceptions import ContentExtractionError
-from .rate_limiter import RateLimiter
+from models.document import Document
+from config import ScraperConfig
+from utils.logging_config import get_logger
+from utils.exceptions import ContentExtractionError
+from scraper.rate_limiter import RateLimiter
 
 logger = get_logger()
 

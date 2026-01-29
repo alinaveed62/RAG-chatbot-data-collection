@@ -5,8 +5,8 @@ import random
 from typing import Optional
 from functools import wraps
 
-from ..config import RateLimitConfig
-from ..utils.logging_config import get_logger
+from config import RateLimitConfig
+from utils.logging_config import get_logger
 
 logger = get_logger()
 
