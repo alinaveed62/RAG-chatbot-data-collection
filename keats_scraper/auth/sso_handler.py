@@ -12,10 +12,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 
-from ..config import ScraperConfig
-from ..utils.logging_config import get_logger
-from ..utils.exceptions import AuthenticationError
-from .session_manager import SessionManager
+from config import ScraperConfig
+from utils.logging_config import get_logger
+from utils.exceptions import AuthenticationError
+from auth.session_manager import SessionManager
 
 logger = get_logger()
 

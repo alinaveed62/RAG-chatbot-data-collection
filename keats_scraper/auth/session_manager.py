@@ -8,8 +8,8 @@ from datetime import datetime
 import requests
 from cryptography.fernet import Fernet
 
-from ..utils.logging_config import get_logger
-from ..utils.exceptions import SessionExpiredError
+from utils.logging_config import get_logger
+from utils.exceptions import SessionExpiredError
 
 logger = get_logger()
 

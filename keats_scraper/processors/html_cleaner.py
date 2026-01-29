@@ -5,7 +5,7 @@ from typing import Optional
 from bs4 import BeautifulSoup
 import html2text
 
-from ..utils.logging_config import get_logger
+from utils.logging_config import get_logger
 
 logger = get_logger()
 

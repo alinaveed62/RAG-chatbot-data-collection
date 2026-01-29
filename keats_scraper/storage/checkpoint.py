@@ -6,8 +6,8 @@ from datetime import datetime
 from typing import Set, Optional, Dict, Any
 from dataclasses import dataclass, asdict
 
-from ..utils.logging_config import get_logger
-from ..utils.exceptions import CheckpointError
+from utils.logging_config import get_logger
+from utils.exceptions import CheckpointError
 
 logger = get_logger()
 
